@@ -1,0 +1,2 @@
+2022-05-29 17:10:37.488 +03:00 [INF] AddPatient from PatientConroller called with id 111
+2022-05-29 17:10:37.496 +03:00 [ERR] patient with id 111 allready exists
