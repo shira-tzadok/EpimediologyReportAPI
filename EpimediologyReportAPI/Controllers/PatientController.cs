@@ -18,7 +18,7 @@ namespace EpidemiologyReport.Api.Controllers
         [HttpPost("{id}")]
         public async Task<ActionResult> AddPatient([FromBody]Patient patient, [FromRoute]int id)
         {
-            Task<IEnumerable<Patient>> patients= _patientRepository.AddPatient(patient,id);  
+            Task<List<Patient>> patients= _patientRepository.AddPatient(patient,id);  
             if(patient==null)
                 return await Task.FromResult(BadRequest(patients));
             return await Task.FromResult(Created(id.ToString(), patient));
@@ -34,19 +34,19 @@ namespace EpidemiologyReport.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Patient>> GetAllPatients()
+        public async Task<List<Patient>> GetAllPatients()
         {
             return await _patientRepository.GetAllPatients();
         }
 
         [HttpGet("{lastName}")]
-        public async Task<IEnumerable<Patient>> GetPatientByLastName(string lastName)
+        public async Task<List<Patient>> GetPatientByLastName(string lastName)
         {
             return await _patientRepository.GetPatientByLastName(lastName);
         }
 
         [HttpGet("{firstName}")]
-        public async Task<IEnumerable<Patient>> GetPatientByFirstName(string firstName)
+        public async Task<List<Patient>> GetPatientByFirstName(string firstName)
         {
             return await _patientRepository.GetPatientByFirstName(firstName);
         }

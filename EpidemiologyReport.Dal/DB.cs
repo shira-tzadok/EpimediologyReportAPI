@@ -22,27 +22,27 @@ namespace EpidemiologyReport.DAL
 
         static List<Location> location1 = new List<Location>()
         {
-            new Location("bnei brack",new DateTime(2020/8/1),new DateTime(2020/8/1),"Restaurant"),
-            new Location("Jerusalem",new DateTime(2020/8/6),new DateTime(2020/8/10),"Hotel")
+            new Location{City="bnei brack",StartDate=new DateTime(2020/8/1),EndDate=new DateTime(2020/8/1),Description="Restaurant" },
+            new Location{City="Jerusalem",StartDate=new DateTime(2020/8/6),EndDate=new DateTime(2020/8/10),Description="Hotel" }
         };
 
         static List<Location> location2 = new List<Location>()
         {
-            new Location("Ashdod",new DateTime(2020/8/1),new DateTime(2020/8/1),"Restaurant"),
-            new Location("elad",new DateTime(2020/8/6),new DateTime(2020/8/10),"Hotel")
+            new Location{City="Ashdod",StartDate=new DateTime(2020/8/1),EndDate=new DateTime(2020/8/1),Description="Restaurant" },
+            new Location{City="elad",StartDate=new DateTime(2020/8/6),EndDate=new DateTime(2020/8/10),Description="Hotel" }
         };
 
         static List<Location> location3 = new List<Location>()
         {
-            new Location("Netivot",new DateTime(2020/8/1),new DateTime(2020/8/1),"Restaurant"),
-            new Location("bnei brack",new DateTime(2020/8/6),new DateTime(2020/8/10),"Hotel")
+            new Location{City="Netivot",StartDate=new DateTime(2020/8/1),EndDate=new DateTime(2020/8/1),Description="Restaurant" },
+            new Location{City="bnei brack",StartDate=new DateTime(2020/8/6),EndDate=new DateTime(2020/8/10),Description="Hotel" }
         };
 
-        public List<Patient> PatientList { get; set; } = new List<Patient>()
+        public static List<Patient> PatientList { get; set; } = new List<Patient>()
         {
-            new Patient(111,"Cohen","Yonatan", location1),
-            new Patient(222,"Levi","Shimon", location2),
-            new Patient(333,"ben tzvi","shira", location3)
+            new Patient{PatientId=111,LastName="Cohen",FirstName="Yonatan", LocationList=location1 },
+            new Patient{PatientId=222,LastName="Levi",FirstName="Shimon", LocationList=location2 },
+            new Patient{PatientId=333,LastName="ben tzvi",FirstName="shira", LocationList=location3 }
         };
     }
 }

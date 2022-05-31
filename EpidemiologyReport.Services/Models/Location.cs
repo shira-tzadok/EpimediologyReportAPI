@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EpidemiologyReport.Services.Models
 {
-    public class Location
+    public class Location:ILocation
     {
         [StringLength(15)]
         public string City { get; set; }
@@ -15,13 +15,5 @@ namespace EpidemiologyReport.Services.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Description { get; set; }
-
-        public Location(string city, DateTime startDate, DateTime endDate, string description)
-        {
-            City = city;
-            StartDate = startDate;
-            EndDate = endDate;
-            Description = description;
-        }
     }
 }
