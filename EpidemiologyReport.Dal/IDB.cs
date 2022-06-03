@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpidemiologyReport.Services.Models
+namespace EpidemiologyReport.DAL
 {
     public interface IDB
     {
-        List<Patient> PatientList { get; set; }
+        static List<Patient> PatientList { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EpidemiologyReport.Services.Models
 {
-    public class Patient
+    public class Patient:IPatient
     {
         [Required]
         public int PatientId { get; set; }
@@ -15,12 +15,5 @@ namespace EpidemiologyReport.Services.Models
         public string FirstName { get; set; }
         public List<Location> LocationList { get; set; }
 
-        public Patient(int patientId, string firstName, string lastName, List<Location> locationList)
-        {
-            PatientId = patientId;
-            FirstName = firstName;
-            LastName = lastName;
-            LocationList = locationList;
-        }
     }
 }

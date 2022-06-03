@@ -17,19 +17,19 @@ namespace EpidemiologyReport.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Location>> GetLocations()
+        public async Task<List<Location>> GetLocations()
         {
             return await _locationRepository.GetLocations();
         }
 
         [HttpGet("{city}")]
-        public async Task<IEnumerable<Location>> GetLocationByCity(string city)
+        public async Task<List<Location>> GetLocationByCity(string city)
         {
             return await _locationRepository.GetLocationByCity(city);
         }
 
         [HttpGet("{id}")]
-        public async Task<IEnumerable<Location>> GetLocationByPatientId(int id)
+        public async Task<List<Location>> GetLocationByPatientId(int id)
         {
             return await _locationRepository.GetLocationByPatientId(id);
         }
@@ -37,14 +37,14 @@ namespace EpidemiologyReport.Api.Controllers
         [HttpPost("{id}")]
         public async Task<ActionResult> AddLocation([FromBody] List<Location> newLocation,[FromRoute] int id)
         {
-            Task<IEnumerable<Location>> locations = _locationRepository.AddLocation(newLocation, id);
+            Task<List<Location>> locations = _locationRepository.AddLocation(newLocation, id);
             if (locations == null)
                 return await Task.FromResult(NotFound());
             return await Task.FromResult(Created(id.ToString(),newLocation));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IEnumerable<Location>> DeleteLocationById(int id)
+        public async Task<List<Location>> DeleteLocationById(int id)
         {
             return await _locationRepository.DeleteLocationById(id);
         }

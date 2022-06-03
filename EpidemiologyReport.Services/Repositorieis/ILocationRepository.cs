@@ -9,10 +9,10 @@ namespace EpidemiologyReport.Services.Repositorieis
 {
     public interface ILocationRepository
     {
-        Task<IEnumerable<Location>> GetLocations();
-        Task<IEnumerable<Location>> GetLocationByCity(string city);
-        Task<IEnumerable<Location>> GetLocationByPatientId(int id);
-        Task<IEnumerable<Location>> AddLocation(IEnumerable<Location> newLocation, int id);
-        Task<IEnumerable<Location>> DeleteLocationById(int id);
+        Task<List<Location>> GetLocations();
+        Task<List<Location>> GetLocationByCity(string city);
+        Task<List<Location>> GetLocationByPatientId(int id);
+        Task<List<Location>> AddLocation(List<Location> newLocation, int id);
+        Task<List<Location>> DeleteLocationById(int id);
     }
 }
